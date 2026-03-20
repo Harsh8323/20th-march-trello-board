@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello Board - Board</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <span class="logo">Trello Board</span>
+      <button class="btn btn-primary" onclick="showCreateIssueModal()">+ New Issue</button>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <a href="#" class="back-link" onclick="goBack(event)">← Back to Boards</a>
+      
+      <h1 id="board-title" style="font-size: 24px; margin-bottom: 24px;">Loading...</h1>
+
+      <div class="kanban-board">
+        <div class="kanban-column">
+          <div class="column-header">
+            <h3>To Do</h3>
+            <span class="column-count" data-status="TODO">0</span>
+          </div>
+          <div class="column-issues" id="column-todo" data-status="TODO">
+          </div>
+        </div>
+
+        <div class="kanban-column">
+          <div class="column-header">
+            <h3>In Progress</h3>
+            <span class="column-count" data-status="IN_PROGRESS">0</span>
+          </div>
+          <div class="column-issues" id="column-in-progress" data-status="IN_PROGRESS">
+          </div>
+        </div>
+
+        <div class="kanban-column">
+          <div class="column-header">
+            <h3>Done</h3>
+            <span class="column-count" data-status="DONE">0</span>
+          </div>
+          <div class="column-issues" id="column-done" data-status="DONE">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/board.js"></script>
+</body>
+</html>
